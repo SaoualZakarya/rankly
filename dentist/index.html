@@ -1213,6 +1213,17 @@
             color: var(--ink-dim);
         }
 
+        .pdf-success {
+            display: none;
+            font-size: 0.78rem;
+            color: var(--teal-mid);
+            text-align: center;
+        }
+
+        .pdf-success.is-visible {
+            display: block;
+        }
+
         /* ─── FAQ SECTION (extra section) ─── */
         .faq {
             padding: 8rem 0;
@@ -1927,7 +1938,7 @@
                 <div class="lm-text">
                     <p>Free Download</p>
                     <strong>The London Patient's Guide to Private Dentistry</strong>
-                    <span>What to ask, what to expect, how to choose — 12-page PDF</span>
+                    <span>What to ask, what to expect, how to choose — 1-page PDF</span>
                 </div>
                 <div class="lm-cta">Get It Free</div>
             </a>
@@ -2177,7 +2188,7 @@
                 <div class="magnet-title">
                     "The London Patient's Guide<br />to <em>Private Dentistry"</em>
                 </div>
-                <p class="magnet-desc">Not sure what to expect from private dental care? Download our free 12-page guide
+                <p class="magnet-desc">Not sure what to expect from private dental care? Download our free 1-page guide
                     — written by our clinical director for patients who want to make informed decisions.</p>
                 <ul class="magnet-checklist">
                     <li>How to compare private dental practices in London</li>
@@ -2194,7 +2205,7 @@
                     <div class="pdf-icon-wrap">📄</div>
                     <div>
                         <div class="pdf-title">London Patient's Guide to Private Dentistry</div>
-                        <div class="pdf-subtitle">By Dr. Richard Ellison BDS MSc · 12 pages · Free</div>
+                        <div class="pdf-subtitle">By Dr. Richard Ellison BDS MSc · 1 page · Free</div>
                     </div>
                 </div>
                 <div class="pdf-contents">
@@ -2215,13 +2226,22 @@
                         <div class="pdf-item-text">Questions to ask your dentist</div>
                     </div>
                 </div>
-                <div class="pdf-form">
-                    <input class="pdf-input" type="text" placeholder="Your first name" />
-                    <input class="pdf-input" type="email" placeholder="Your email address" />
-                    <button class="btn-teal" style="width:100%;justify-content:center;padding:0.9rem;font-size:0.9rem">
+                <form class="pdf-form js-guide-form" action="https://formspree.io/f/maqkgqaz" method="POST">
+                    <input type="hidden" name="site" value="dentist-guide" />
+                    <input type="hidden" name="guide_url" value="https://saoualzakarya.github.io/rankly/dentist/ellison-guide.pdf" />
+                    <input type="hidden" name="_replyto" value="" />
+                    <div class="hp-field" aria-hidden="true">
+                        <label>Company</label>
+                        <input type="text" name="company" autocomplete="off" tabindex="-1" />
+                    </div>
+                    <input class="pdf-input" type="text" name="firstName" placeholder="Your first name" required />
+                    <input class="pdf-input" type="email" name="email" placeholder="Your email address" required />
+                    <button type="submit" class="btn-teal"
+                        style="width:100%;justify-content:center;padding:0.9rem;font-size:0.9rem">
                         📥 Send Me the Free Guide
                     </button>
-                </div>
+                    <p class="pdf-success js-guide-success">Thanks! Check your inbox for the download link.</p>
+                </form>
             </div>
         </div>
     </section>
@@ -2552,8 +2572,11 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2025 Ellison Dental Ltd. All rights reserved. GDC Registered. Complaints procedure available on
-                request.</p>
+            <p>
+                ©
+                <script>document.write(new Date().getFullYear())</script>
+                Ellison Dental Ltd. All rights reserved. GDC Registered. Complaints procedure available on request.
+            </p>
             <div style="display:flex;gap:1.5rem">
                 <a href="#">Privacy Policy</a>
                 <a href="#">Cookie Policy</a>
@@ -2674,6 +2697,62 @@
                 closeDentistModal();
             }
         });
+
+        const guideForm = document.querySelector('.js-guide-form');
+        const guideSuccess = document.querySelector('.js-guide-success');
+
+        if (guideForm) {
+                guideForm.addEventListener('submit', async function (e) {
+                    e.preventDefault();
+
+                    const emailInput = guideForm.querySelector('input[name="email"]');
+                    const replyTo = guideForm.querySelector('input[name="_replyto"]');
+                    if (emailInput && replyTo) {
+                        replyTo.value = emailInput.value.trim();
+                    }
+                    const honeypot = guideForm.querySelector('input[name="company"]');
+                    if (honeypot && honeypot.value.trim() !== '') {
+                        return;
+                    }
+                    const startTime = Number(guideForm.dataset.startTime || 0);
+                    if (startTime && Date.now() - startTime < 2500) {
+                        return;
+                    }
+
+                    // ═════ EMAILJS INTEGRATION ═════
+                    try {
+                        const emailData = {
+                            service_id: 'service_cmovezo',
+                            template_id: 'template_flaorx8', 
+                            user_id: 'sWOtykCrjjo2hC_fb',    
+                            template_params: {
+                                email: emailInput ? emailInput.value.trim() : '',
+                                // If you add a name input field in the future, you can map it here
+                            }
+                        };
+
+                        const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Accept': 'application/json'
+                            },
+                            body: JSON.stringify(emailData)
+                        });
+
+                        if (response.ok) {
+                            guideForm.reset();
+                            if (guideSuccess) {
+                                guideSuccess.classList.add('is-visible');
+                            }
+                        } else {
+                            alert('Sorry, there was an issue sending the guide. Please try again.');
+                        }
+                    } catch (error) {
+                        alert('Sorry, there was an issue sending the guide. Please try again.');
+                    }
+                });
+            }
     </script>
 
 </body>

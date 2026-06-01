@@ -1105,7 +1105,8 @@
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <p>© 2025 Rankly. All rights reserved.</p>
+  <p>© <span id="year"></span> Rankly. All rights reserved.</p>
+  <script>document.querySelector("#year").textContent = new Date().getFullYear();</script>
 </footer>
 
 <script>

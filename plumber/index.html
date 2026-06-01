@@ -1637,7 +1637,13 @@
                 <li><a href="#reviews">Reviews</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <p class="copy">© 2025 Harrington Plumbing Ltd. All rights reserved.</p>
+            <p class="copy">
+                © <span id="year"></span> Harrington Plumbing Ltd. All rights reserved.
+            </p>
+            
+            <script>
+                document.getElementById("year").textContent = new Date().getFullYear();
+            </script>
         </div>
     </footer>
 
