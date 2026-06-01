@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harrington Plumbing — London's Trusted Plumber</title>
+    <meta name="description"
+        content="Harrington Plumbing — Emergency & planned plumbing across London. Available 24/7. Fast response, fair prices, guaranteed work." />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <style>
+        :root {
+            --steel-black: #0e1015;
+            --steel-dark: #161a22;
+            --steel-mid: #1e2330;
+            --steel-light: #252c3a;
+            --orange: #f97316;
+            --orange-hot: #fb923c;
+            --orange-dim: rgba(249, 115, 22, 0.15);
+            --orange-line: rgba(249, 115, 22, 0.25);
+            --white: #f1f0ee;
+            --white-dim: rgba(241, 240, 238, 0.6);
+            --white-faint: rgba(241, 240, 238, 0.06);
+            --green: #22c55e;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--steel-black);
+            color: var(--white);
+            font-family: 'Barlow', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* ─── EMERGENCY TOP BAR ─── */
+        .emergency-bar {
+            background: var(--orange);
+            padding: 0.55rem 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: white;
+        }
+
+        .emergency-bar a {
+            color: white;
+            text-decoration: none;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 0.2rem 0.8rem;
+            border-radius: 2px;
+            transition: background 0.2s;
+        }
+
+        .emergency-bar a:hover {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            display: inline-block;
+            animation: blink 1.2s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1
+            }
+
+            50% {
+                opacity: 0.2
+            }
+        }
+
+        /* ─── NAV ─── */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.1rem 5%;
+            background: rgba(14, 16, 21, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 2px solid var(--orange-line);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .nav-icon {
+            width: 42px;
+            height: 42px;
+            background: var(--orange);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .nav-name {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--white);
+            line-height: 1.1;
+        }
+
+        .nav-tagline {
+            font-size: 0.62rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--orange);
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white-dim);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            color: var(--orange-hot);
+        }
+
+        .nav-call {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--orange);
+            color: white;
+            text-decoration: none;
+            padding: 0.65rem 1.4rem;
+            border-radius: 3px;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 20px rgba(249, 115, 22, 0.3);
+        }
+
+        .nav-call:hover {
+            background: var(--orange-hot);
+            transform: translateY(-1px);
+        }
+
+        /* ─── HERO ─── */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            min-height: 95vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: stretch;
+        }
+
+        .hero-left {
+            padding: 6rem 5% 5rem 5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+            background: var(--steel-dark);
+        }
+
+        /* diagonal cut */
+        .hero-left::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -60px;
+            bottom: 0;
+            width: 120px;
+            background: var(--steel-dark);
+            clip-path: polygon(0 0, 50% 0, 100% 100%, 0 100%);
+            z-index: 3;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: var(--orange-dim);
+            border: 1px solid var(--orange-line);
+            border-radius: 2px;
+            padding: 0.4rem 1rem;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--orange-hot);
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            width: fit-content;
+            animation: fadeUp 0.7s ease both;
+        }
+
+        .hero h1 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(3rem, 5.5vw, 5.5rem);
+            font-weight: 900;
+            line-height: 0.95;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            margin-bottom: 1.5rem;
+            animation: fadeUp 0.8s 0.1s ease both;
+        }
+
+        .hero h1 .line-orange {
+            color: var(--orange);
+            display: block;
+        }
+
+        .hero h1 .line-white {
+            color: var(--white);
+            display: block;
+        }
+
+        .hero-desc {
+            font-size: 1rem;
+            color: var(--white-dim);
+            line-height: 1.8;
+            max-width: 420px;
+            font-weight: 300;
+            margin-bottom: 2.5rem;
+            animation: fadeUp 0.9s 0.2s ease both;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: fadeUp 1s 0.3s ease both;
+            margin-bottom: 3rem;
+        }
+
+        .btn-orange {
+            background: var(--orange);
+            color: white;
+            text-decoration: none;
+            padding: 1rem 2.2rem;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 3px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+            box-shadow: 0 4px 25px rgba(249, 115, 22, 0.35);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-orange:hover {
+            background: var(--orange-hot);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 35px rgba(249, 115, 22, 0.5);
+        }
+
+        .btn-outline-w {
+            background: transparent;
+            color: var(--white);
+            padding: 1rem 2rem;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 1.5px solid rgba(241, 240, 238, 0.25);
+            border-radius: 3px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-outline-w:hover {
+            border-color: var(--orange-hot);
+            color: var(--orange-hot);
+        }
+
+        /* Trust row */
+        .hero-trust {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            animation: fadeUp 1s 0.4s ease both;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .trust-icon {
+            font-size: 1.1rem;
+        }
+
+        .trust-item span {
+            font-size: 0.82rem;
+            color: var(--white-dim);
+            font-weight: 400;
+        }
+
+        .trust-item strong {
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        /* Hero right — image collage */
+        .hero-right {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-main-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.65) saturate(0.9);
+            transition: transform 8s ease;
+        }
+
+        .hero-right:hover .hero-main-img {
+            transform: scale(1.04);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(270deg, transparent 40%, var(--steel-dark) 100%);
+        }
+
+        /* Floating badge */
+        .hero-float-badge {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--orange);
+            padding: 1.2rem 1.5rem;
+            border-radius: 4px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .hfb-num {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: white;
+            line-height: 1;
+        }
+
+        .hfb-label {
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.85);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        .available-tag {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: var(--green);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* ─── SERVICES ─── */
+        .services {
+            padding: 7rem 5%;
+            background: var(--steel-dark);
+        }
+
+        .sec-header {
+            margin-bottom: 4rem;
+        }
+
+        .sec-label {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--orange);
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .sec-label::before {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background: var(--orange);
+        }
+
+        .sec-title {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1;
+            letter-spacing: -0.5px;
+            color: var(--white);
+        }
+
+        .sec-title span {
+            color: var(--orange);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: rgba(241, 240, 238, 0.06);
+            border: 1px solid rgba(241, 240, 238, 0.06);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 0;
+            max-width: 1200px;
+        }
+
+        .service-card {
+            background: var(--steel-black);
+            padding: 2.5rem 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.3s;
+            cursor: default;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--orange);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover {
+            background: var(--steel-mid);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card .bg-num {
+            position: absolute;
+            bottom: -1rem;
+            right: -0.5rem;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 5rem;
+            font-weight: 900;
+            color: rgba(249, 115, 22, 0.05);
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .service-icon-wrap {
+            width: 50px;
+            height: 50px;
+            background: var(--orange-dim);
+            border: 1px solid var(--orange-line);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .service-card h3 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.6rem;
+            color: var(--white);
+        }
+
+        .service-card p {
+            font-size: 0.85rem;
+            color: var(--white-dim);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* ─── WORK / PHOTO GALLERY ─── */
+        .work {
+            padding: 7rem 5%;
+            background: var(--steel-black);
+        }
+
+        .work-inner {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .work-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .work-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows: 280px 220px;
+            gap: 12px;
+        }
+
+        .work-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .work-card:first-child {
+            grid-row: span 2;
+        }
+
+        .work-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease, filter 0.5s ease;
+            filter: brightness(0.75) saturate(0.85);
+        }
+
+        .work-card:hover .work-img {
+            transform: scale(1.08);
+            filter: brightness(0.9) saturate(1.1);
+        }
+
+        .work-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(0deg, rgba(14, 16, 21, 0.95) 0%, transparent 100%);
+            padding: 2rem 1.2rem 1.2rem;
+            transform: translateY(100%);
+            transition: transform 0.35s ease;
+        }
+
+        .work-card:hover .work-label {
+            transform: none;
+        }
+
+        .work-label span {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--orange);
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+        }
+
+        .work-label strong {
+            display: block;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-top: 2px;
+        }
+
+        /* Orange corner tag */
+        .work-tag {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--orange);
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: white;
+            padding: 0.2rem 0.7rem;
+            border-radius: 2px;
+        }
+
+        /* ─── PROOF / REVIEWS ─── */
+        .proof {
+            padding: 7rem 5%;
+            background: var(--steel-dark);
+            position: relative;
+        }
+
+        .proof::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--orange), transparent);
+        }
+
+        .proof-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .proof-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: rgba(249, 115, 22, 0.1);
+            border: 1px solid var(--orange-line);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 5rem;
+        }
+
+        .proof-stat {
+            background: var(--steel-black);
+            padding: 2rem;
+            text-align: center;
+            transition: background 0.3s;
+        }
+
+        .proof-stat:hover {
+            background: var(--steel-mid);
+        }
+
+        .ps-num {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--orange);
+            line-height: 1;
+        }
+
+        .ps-label {
+            font-size: 0.78rem;
+            color: var(--white-dim);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 0.4rem;
+            font-weight: 500;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .review-card {
+            background: var(--steel-black);
+            border: 1px solid rgba(241, 240, 238, 0.07);
+            border-left: 3px solid var(--orange);
+            border-radius: 4px;
+            padding: 2rem;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .review-card:hover {
+            border-color: var(--orange-hot);
+            transform: translateY(-4px);
+        }
+
+        .review-stars {
+            color: var(--orange);
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+        }
+
+        .review-text {
+            font-size: 0.92rem;
+            color: var(--white-dim);
+            line-height: 1.75;
+            font-weight: 300;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .author-av {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--orange-dim);
+            border: 1px solid var(--orange-line);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--orange);
+        }
+
+        .author-av img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .author-info strong {
+            display: block;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .author-info span {
+            font-size: 0.75rem;
+            color: var(--white-dim);
+        }
+
+        /* ─── CONTACT ─── */
+        .contact {
+            padding: 7rem 5%;
+            background: var(--steel-black);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: start;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-left h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(2.5rem, 4vw, 4rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1;
+            letter-spacing: -0.5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-left h2 span {
+            color: var(--orange);
+            display: block;
+        }
+
+        .contact-left p {
+            color: var(--white-dim);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            font-weight: 300;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            background: var(--steel-mid);
+            border-left: 3px solid var(--orange);
+            padding: 1.2rem 1.5rem;
+            border-radius: 3px;
+            text-decoration: none;
+            color: var(--white);
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .contact-method:hover {
+            background: var(--steel-light);
+            transform: translateX(4px);
+        }
+
+        .cm-icon {
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .cm-label {
+            font-size: 0.68rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--orange);
+            font-weight: 700;
+        }
+
+        .cm-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            background: #25d366;
+            color: #000;
+            padding: 1rem 2rem;
+            border-radius: 3px;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: opacity 0.3s, transform 0.2s;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.25);
+            width: 100%;
+            justify-content: center;
+        }
+
+        .whatsapp-btn:hover {
+            opacity: 0.88;
+            transform: translateY(-2px);
+        }
+
+        /* Form */
+        .contact-form {
+            background: var(--steel-dark);
+            border: 1px solid rgba(249, 115, 22, 0.2);
+            border-top: 3px solid var(--orange);
+            border-radius: 4px;
+            padding: 2.5rem;
+        }
+
+        .form-header {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1.8rem;
+        }
+
+        .form-header-icon {
+            width: 42px;
+            height: 42px;
+            background: var(--orange);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .form-header h3 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-header p {
+            font-size: 0.78rem;
+            color: var(--white-dim);
+        }
+
+        .form-group {
+            margin-bottom: 1.1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--white-dim);
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(241, 240, 238, 0.1);
+            border-radius: 3px;
+            padding: 0.8rem 1rem;
+            color: var(--white);
+            font-size: 0.9rem;
+            font-family: 'Barlow', sans-serif;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--orange);
+        }
+
+        .form-group textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        .form-group select option {
+            background: var(--steel-mid);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .urgency-row {
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .urgency-chip {
+            background: var(--steel-light);
+            border: 1px solid rgba(241, 240, 238, 0.1);
+            border-radius: 50px;
+            padding: 0.4rem 1rem;
+            font-size: 0.8rem;
+            color: var(--white-dim);
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+
+        .urgency-chip:hover,
+        .urgency-chip.active {
+            background: var(--orange-dim);
+            border-color: var(--orange);
+            color: var(--orange-hot);
+        }
+
+        .form-note {
+            font-size: 0.72rem;
+            color: var(--white-dim);
+            margin-top: 0.8rem;
+            line-height: 1.5;
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            background: #080b10;
+            border-top: 2px solid var(--orange-line);
+            padding: 2.5rem 5%;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .footer-brand .nav-name {
+            font-size: 1.1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--white-dim);
+            text-decoration: none;
+            font-size: 0.82rem;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+        }
+
+        .footer-links a:hover {
+            color: var(--orange-hot);
+        }
+
+        footer p.copy {
+            color: var(--white-dim);
+            font-size: 0.75rem;
+        }
+
+        /* ─── RANKLY BADGE ─── */
+        .rankly-badge {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 998;
+            background: rgba(14, 16, 21, 0.95);
+            border: 1px solid rgba(249, 115, 22, 0.3);
+            border-radius: 50px;
+            padding: 0.5rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            backdrop-filter: blur(10px);
+            text-decoration: none;
+            transition: border-color 0.3s;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .rankly-badge:hover {
+            border-color: var(--orange);
+        }
+
+        .rankly-badge span {
+            font-size: 0.7rem;
+            color: var(--white-dim);
+            letter-spacing: 1px;
+        }
+
+        .rankly-badge strong {
+            font-size: 0.75rem;
+            color: var(--orange);
+            letter-spacing: 1px;
+            font-family: 'Barlow Condensed', sans-serif;
+        }
+
+        /* ─── SCROLL REVEAL ─── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+
+            .hero-right {
+                height: 320px;
+            }
+
+            .hero-left::after {
+                display: none;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .work-grid {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto;
+            }
+
+            .work-card:first-child {
+                grid-row: span 1;
+                grid-column: span 2;
+            }
+
+            .proof-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                padding: 5rem 5%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- EMERGENCY BAR -->
+    <div class="emergency-bar">
+        <span><span class="pulse-dot"></span>&nbsp; EMERGENCY PLUMBER — AVAILABLE 24/7</span>
+        <a href="tel:+442081234567">📞 Call Now: +44 208 123 4567</a>
+        <span>⚡ 60-min response · London & surrounding areas</span>
+    </div>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-brand">
+            <div class="nav-icon">🔧</div>
+            <div>
+                <div class="nav-name">Harrington Plumbing</div>
+                <div class="nav-tagline">London's Trusted Plumber</div>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#work">Our Work</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="tel:+442081234567" class="nav-call">📞 Call Now</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-left">
+            <div class="hero-tag">⚡ Available 24/7 · Same Day Service</div>
+
+            <h1>
+                <span class="line-white">London's</span>
+                <span class="line-orange">Most Trusted</span>
+                <span class="line-white">Plumber.</span>
+            </h1>
+
+            <p class="hero-desc">
+                Leaks, boilers, bathrooms, drains — we fix it fast and we fix it right. Serving London homeowners and
+                landlords for over 15 years with guaranteed workmanship.
+            </p>
+
+            <div class="hero-actions">
+                <a href="tel:+442081234567" class="btn-orange">📞 Call: +44 208 123 4567</a>
+                <a href="#contact" class="btn-outline-w">📋 Get a Free Quote</a>
+            </div>
+
+            <div class="hero-trust">
+                <div class="trust-item">
+                    <span class="trust-icon">✅</span>
+                    <span><strong>Gas Safe</strong> Registered</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">⭐</span>
+                    <span><strong>5-Star</strong> Google Rating</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">🛡️</span>
+                    <span><strong>Fully</strong> Insured</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-right">
+            <img class="hero-main-img"
+                src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=900&q=80&fit=crop"
+                alt="Professional plumber working on pipes" loading="eager" />
+            <div class="hero-overlay"></div>
+            <div class="available-tag"><span class="pulse-dot"></span> Available Now</div>
+            <div class="hero-float-badge">
+                <div class="hfb-num">15+</div>
+                <div class="hfb-label">Years in London</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div style="max-width:1200px;margin:0 auto">
+            <div class="sec-header reveal">
+                <div class="sec-label">What We Do</div>
+                <div class="sec-title">Every Plumbing Job <span>Covered.</span></div>
+            </div>
+            <div class="services-grid reveal">
+                <div class="service-card">
+                    <div class="bg-num">01</div>
+                    <div class="service-icon-wrap">🚿</div>
+                    <h3>Emergency Repairs</h3>
+                    <p>Burst pipes, leaks, no hot water. We arrive within 60 minutes across London — any time, day or
+                        night.</p>
+                </div>
+                <div class="service-card">
+                    <div class="bg-num">02</div>
+                    <div class="service-icon-wrap">🔥</div>
+                    <h3>Boiler & Heating</h3>
+                    <p>Boiler installation, servicing, repairs and power flushing. Gas Safe registered engineers only.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="bg-num">03</div>
+                    <div class="service-icon-wrap">🏠</div>
+                    <h3>Bathroom Fitting</h3>
+                    <p>Full bathroom and shower installations. From design to a finished, tiled bathroom — we handle it
+                        all.</p>
+                </div>
+                <div class="service-card">
+                    <div class="bg-num">04</div>
+                    <div class="service-icon-wrap">🌊</div>
+                    <h3>Drain Unblocking</h3>
+                    <p>Blocked sinks, toilets and drains cleared fast using professional jetting equipment. No mess left
+                        behind.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WORK GALLERY -->
+    <section class="work" id="work">
+        <div class="work-inner">
+            <div class="work-header reveal">
+                <div>
+                    <div class="sec-label">Recent Projects</div>
+                    <div class="sec-title">See the <span>Work.</span></div>
+                </div>
+                <a href="#contact" class="btn-orange" style="align-self:flex-end">Get a Free Quote →</a>
+            </div>
+
+            <div class="work-grid reveal">
+
+                <!-- Big feature card -->
+                <div class="work-card">
+                    <img class="work-img"
+                        src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=900&q=80&fit=crop"
+                        alt="Bathroom renovation completed by Harrington Plumbing" loading="lazy" />
+                    <div class="work-tag">Completed</div>
+                    <div class="work-label">
+                        <span>Bathroom Refit</span>
+                        <strong>Full Ensuite — Hackney, London</strong>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="work-card">
+                    <img class="work-img"
+                        src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80&fit=crop"
+                        alt="Boiler installation" loading="lazy" />
+                    <div class="work-tag">Installed</div>
+                    <div class="work-label">
+                        <span>Boiler Swap</span>
+                        <strong>New Combi — Islington</strong>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="work-card">
+                    <img class="work-img"
+                        src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&fit=crop"
+                        alt="Pipe installation" loading="lazy" />
+                    <div class="work-tag">Emergency</div>
+                    <div class="work-label">
+                        <span>Pipe Repair</span>
+                        <strong>Burst Main — Camden</strong>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="work-card">
+                    <img class="work-img"
+                        src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80&fit=crop"
+                        alt="Modern bathroom fitting" loading="lazy" />
+                    <div class="work-tag">New Fit</div>
+                    <div class="work-label">
+                        <span>Walk-in Shower</span>
+                        <strong>Master Bath — Clapham</strong>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="work-card">
+                    <img class="work-img"
+                        src="https://images.unsplash.com/photo-1620626011761-996317702782?w=600&q=80&fit=crop"
+                        alt="Kitchen plumbing work" loading="lazy" />
+                    <div class="work-tag">Completed</div>
+                    <div class="work-label">
+                        <span>Kitchen Refit</span>
+                        <strong>Under-sink Reroute — Brixton</strong>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROOF -->
+    <section class="proof" id="reviews">
+        <div class="proof-inner">
+            <div class="sec-header reveal" style="margin-bottom:3rem">
+                <div class="sec-label">Proof</div>
+                <div class="sec-title">Numbers That <span>Speak.</span></div>
+            </div>
+
+            <div class="proof-stats reveal">
+                <div class="proof-stat">
+                    <div class="ps-num">1,200+</div>
+                    <div class="ps-label">Jobs Completed</div>
+                </div>
+                <div class="proof-stat">
+                    <div class="ps-num">4.9★</div>
+                    <div class="ps-label">Google Rating</div>
+                </div>
+                <div class="proof-stat">
+                    <div class="ps-num">60 min</div>
+                    <div class="ps-label">Avg. Response</div>
+                </div>
+                <div class="proof-stat">
+                    <div class="ps-num">15 yrs</div>
+                    <div class="ps-label">In Business</div>
+                </div>
+            </div>
+
+            <div class="reviews-grid reveal">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Called at 11pm with a burst pipe flooding my kitchen. Dan arrived in under
+                        an hour and sorted everything. Absolute lifesaver — and the price was totally fair."</p>
+                    <div class="review-author">
+                        <div class="author-av">S</div>
+                        <div class="author-info">
+                            <strong>Sarah M.</strong>
+                            <span>Emergency Repair · Hackney</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Had a full bathroom refit done by Harrington. Took 3 days from start to
+                        finish — spotless job, no mess, and everything works perfectly. Would use again without
+                        hesitation."</p>
+                    <div class="review-author">
+                        <div class="author-av">T</div>
+                        <div class="author-info">
+                            <strong>Tom & Claire R.</strong>
+                            <span>Bathroom Refit · Clapham</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Replaced my old boiler the same day I called. The engineer explained
+                        everything, cleaned up after himself, and left me with full documentation. Top quality, highly
+                        recommended."</p>
+                    <div class="review-author">
+                        <div class="author-av">A</div>
+                        <div class="author-info">
+                            <strong>Amir K.</strong>
+                            <span>Boiler Install · Islington</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section style="background:var(--steel-black);padding:0 0 7rem" id="contact">
+        <div class="contact">
+            <div class="contact-left reveal">
+                <div class="sec-label" style="margin-bottom:1rem">Contact</div>
+                <h2>
+                    Need a Plumber?
+                    <span>Call. Message. Done.</span>
+                </h2>
+                <p>Whether it's an emergency at 2am or a bathroom refit you've been planning — we're ready. Free quotes,
+                    no call-out charges for booked jobs.</p>
+
+                <div class="contact-methods">
+                    <a href="tel:+442081234567" class="contact-method">
+                        <span class="cm-icon">📞</span>
+                        <div>
+                            <div class="cm-label">Call Direct</div>
+                            <div class="cm-value">+44 208 123 4567</div>
+                        </div>
+                    </a>
+                    <a href="mailto:hello@harringtonplumbing.co.uk" class="contact-method">
+                        <span class="cm-icon">✉️</span>
+                        <div>
+                            <div class="cm-label">Email Us</div>
+                            <div class="cm-value">hello@harringtonplumbing.co.uk</div>
+                        </div>
+                    </a>
+                    <a href="#" class="contact-method">
+                        <span class="cm-icon">📍</span>
+                        <div>
+                            <div class="cm-label">Coverage Area</div>
+                            <div class="cm-value">All of Greater London</div>
+                        </div>
+                    </a>
+                </div>
+
+                <a href="https://wa.me/442081234567" class="whatsapp-btn">
+                    💬 Message on WhatsApp
+                </a>
+            </div>
+
+            <div class="contact-form reveal">
+                <div class="form-header">
+                    <div class="form-header-icon">📋</div>
+                    <div>
+                        <h3>Free Quote Request</h3>
+                        <p>We respond within 1 hour</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>How urgent is this?</label>
+                    <div class="urgency-row">
+                        <div class="urgency-chip active" onclick="setActive(this)">🚨 Emergency Now</div>
+                        <div class="urgency-chip" onclick="setActive(this)">📅 Today/Tomorrow</div>
+                        <div class="urgency-chip" onclick="setActive(this)">🗓️ This Week</div>
+                        <div class="urgency-chip" onclick="setActive(this)">📆 Planning Ahead</div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" placeholder="John Smith" />
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" placeholder="+44 7700 000000" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Type of Job</label>
+                    <select>
+                        <option value="">What do you need?</option>
+                        <option>Emergency Leak / Burst Pipe</option>
+                        <option>No Hot Water / Boiler Issue</option>
+                        <option>Bathroom Installation</option>
+                        <option>Drain Blockage</option>
+                        <option>Radiator / Heating Problem</option>
+                        <option>Kitchen Plumbing</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Brief Description</label>
+                    <textarea placeholder="Tell us what's happening — any details help us come prepared..."></textarea>
+                </div>
+
+                <button type="button" class="btn-orange"
+                    style="width:100%;justify-content:center;font-size:1rem;padding:1rem">
+                    🔧 Send Request — It's Free
+                </button>
+                <p class="form-note">🔒 Your details are never shared. No spam, ever. We'll call you back within 1 hour.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="nav-icon" style="width:34px;height:34px;font-size:1rem">🔧</div>
+                <div>
+                    <div class="nav-name" style="font-size:1rem">HARRINGTON PLUMBING</div>
+                    <div style="font-size:0.65rem;color:var(--white-dim);letter-spacing:1px">Gas Safe Registered ·
+                        London</div>
+                </div>
+            </div>
+            <ul class="footer-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <p class="copy">© 2025 Harrington Plumbing Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- RANKLY BADGE -->
+    <a href="#" class="rankly-badge">
+        <span>Built by</span>
+        <strong>RANKLY</strong>
+    </a>
+
+    <script>
+        // Scroll reveal
+        const reveals = document.querySelectorAll('.reveal');
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach((e, i) => {
+                if (e.isIntersecting) {
+                    setTimeout(() => e.target.classList.add('visible'), i * 90);
+                }
+            });
+        }, { threshold: 0.1 });
+        reveals.forEach(r => obs.observe(r));
+
+        // Urgency chip toggle
+        function setActive(el) {
+            el.closest('.urgency-row').querySelectorAll('.urgency-chip').forEach(c => c.classList.remove('active'));
+            el.classList.add('active');
+        }
+    </script>
+
+</body>
+
+</html>
