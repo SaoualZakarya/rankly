@@ -719,6 +719,44 @@
   .cta-input:focus { border-color: var(--purple-bright); }
   .cta-input::placeholder { color: rgba(255,255,255,0.35); }
 
+  .form-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(13, 0, 32, 0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    padding: 1.5rem;
+  }
+
+  .form-modal.is-open {
+    display: flex;
+  }
+
+  .form-modal-card {
+    background: var(--purple-dark);
+    border: 1px solid rgba(168,85,247,0.35);
+    border-radius: 22px;
+    padding: 2.2rem;
+    max-width: 440px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+  }
+
+  .form-modal-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .form-modal-card p {
+    color: var(--white-dim);
+    line-height: 1.6;
+    margin-bottom: 1.6rem;
+  }
+
   /* ─── FOOTER ─── */
   footer {
     padding: 3rem 5%;
@@ -1057,12 +1095,20 @@
     <div class="section-label">Ready?</div>
     <h2>Get your website.<br/>Get more clients.</h2>
     <p>Leave your email and we'll reach out within 24 hours to discuss your project — completely free, no commitment.</p>
-    <form class="cta-input-row" action="https://formspree.io/f/maqkgqaz" method="POST">
+    <form class="cta-input-row js-lead-form" action="https://formspree.io/f/maqkgqaz" method="POST">
       <input class="cta-input" type="email" name="email" placeholder="your@email.com" required/>
       <button type="submit" class="btn-primary" style="white-space:nowrap">Let's Talk -&gt;</button>
     </form>
   </div>
 </section>
+
+<div class="form-modal" id="rankly-success" aria-hidden="true">
+  <div class="form-modal-card" role="dialog" aria-modal="true" aria-labelledby="rankly-success-title">
+    <h3 id="rankly-success-title">Thanks for reaching out</h3>
+    <p>We received your email and will get back to you very soon.</p>
+    <button type="button" class="btn-primary form-modal-close">Close</button>
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -1094,6 +1140,55 @@
       document.querySelectorAll('.industry-pill').forEach(p => p.classList.remove('active'));
       pill.classList.add('active');
     });
+  });
+
+  const ranklyForm = document.querySelector('.js-lead-form');
+  const ranklyModal = document.getElementById('rankly-success');
+  const closeRanklyModal = () => {
+    if (!ranklyModal) {
+      return;
+    }
+    ranklyModal.classList.remove('is-open');
+    ranklyModal.setAttribute('aria-hidden', 'true');
+  };
+
+  if (ranklyForm) {
+    ranklyForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      try {
+        const response = await fetch(ranklyForm.action, {
+          method: 'POST',
+          body: new FormData(ranklyForm),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          ranklyForm.reset();
+          if (ranklyModal) {
+            ranklyModal.classList.add('is-open');
+            ranklyModal.setAttribute('aria-hidden', 'false');
+          }
+        } else {
+          alert('Sorry, there was an issue sending your request. Please try again.');
+        }
+      } catch (error) {
+        alert('Sorry, there was an issue sending your request. Please try again.');
+      }
+    });
+  }
+
+  if (ranklyModal) {
+    ranklyModal.addEventListener('click', (event) => {
+      if (event.target === ranklyModal || event.target.closest('.form-modal-close')) {
+        closeRanklyModal();
+      }
+    });
+  }
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && ranklyModal && ranklyModal.classList.contains('is-open')) {
+      closeRanklyModal();
+    }
   });
 </script>
 </body>

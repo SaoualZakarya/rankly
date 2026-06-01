@@ -923,6 +923,53 @@
             padding: 2.5rem;
         }
 
+        .hp-field {
+            position: absolute;
+            left: -9999px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+
+        .form-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(14, 16, 21, 0.75);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            padding: 1.5rem;
+        }
+
+        .form-modal.is-open {
+            display: flex;
+        }
+
+        .form-modal-card {
+            background: var(--steel-dark);
+            border: 1px solid rgba(249, 115, 22, 0.3);
+            border-radius: 6px;
+            padding: 2rem;
+            max-width: 440px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+        }
+
+        .form-modal-card h3 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.6rem;
+            letter-spacing: 1px;
+            margin-bottom: 0.6rem;
+        }
+
+        .form-modal-card p {
+            color: var(--white-dim);
+            line-height: 1.6;
+            margin-bottom: 1.6rem;
+        }
+
         .form-header {
             display: flex;
             align-items: center;
@@ -1491,13 +1538,20 @@
                 </a>
             </div>
 
-            <div class="contact-form reveal">
+            <form class="contact-form reveal js-lead-form" action="https://formspree.io/f/maqkgqaz" method="POST">
                 <div class="form-header">
                     <div class="form-header-icon">📋</div>
                     <div>
                         <h3>Free Quote Request</h3>
                         <p>We respond within 1 hour</p>
                     </div>
+                </div>
+
+                <input type="hidden" name="site" value="plumber" />
+                <input type="hidden" name="urgency" value="Emergency Now" />
+                <div class="hp-field" aria-hidden="true">
+                    <label>Company</label>
+                    <input type="text" name="company" autocomplete="off" tabindex="-1" />
                 </div>
 
                 <div class="form-group">
@@ -1513,17 +1567,24 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label>Your Name</label>
-                        <input type="text" placeholder="John Smith" />
+                        <input type="text" name="fullName" placeholder="John Smith" required />
                     </div>
+                </div>
+
+                <div class="form-row">
                     <div class="form-group">
                         <label>Phone Number</label>
-                        <input type="tel" placeholder="+44 7700 000000" />
+                        <input type="tel" name="phone" placeholder="+44 7700 000000" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" name="email" placeholder="john@email.com" required />
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label>Type of Job</label>
-                    <select>
+                    <select name="jobType" required>
                         <option value="">What do you need?</option>
                         <option>Emergency Leak / Burst Pipe</option>
                         <option>No Hot Water / Boiler Issue</option>
@@ -1537,18 +1598,27 @@
 
                 <div class="form-group">
                     <label>Brief Description</label>
-                    <textarea placeholder="Tell us what's happening — any details help us come prepared..."></textarea>
+                    <textarea name="details"
+                        placeholder="Tell us what's happening — any details help us come prepared..."></textarea>
                 </div>
 
-                <button type="button" class="btn-orange"
+                <button type="submit" class="btn-orange"
                     style="width:100%;justify-content:center;font-size:1rem;padding:1rem">
                     🔧 Send Request — It's Free
                 </button>
                 <p class="form-note">🔒 Your details are never shared. No spam, ever. We'll call you back within 1 hour.
                 </p>
-            </div>
+            </form>
         </div>
     </section>
+
+    <div class="form-modal" id="plumber-success" aria-hidden="true">
+        <div class="form-modal-card" role="dialog" aria-modal="true" aria-labelledby="plumber-success-title">
+            <h3 id="plumber-success-title">Request received</h3>
+            <p>Thanks for reaching out. We received your details and will contact you very soon.</p>
+            <button type="button" class="btn-orange form-modal-close">Close</button>
+        </div>
+    </div>
 
     <!-- FOOTER -->
     <footer>
@@ -1591,9 +1661,87 @@
 
         // Urgency chip toggle
         function setActive(el) {
-            el.closest('.urgency-row').querySelectorAll('.urgency-chip').forEach(c => c.classList.remove('active'));
+            const row = el.closest('.urgency-row');
+            if (!row) {
+                return;
+            }
+            row.querySelectorAll('.urgency-chip').forEach(c => c.classList.remove('active'));
             el.classList.add('active');
+            const form = el.closest('form');
+            if (form) {
+                const urgencyInput = form.querySelector('input[name="urgency"]');
+                if (urgencyInput) {
+                    urgencyInput.value = el.textContent.trim();
+                }
+            }
         }
+
+        const plumberForm = document.querySelector('.js-lead-form');
+        const plumberModal = document.getElementById('plumber-success');
+        const closePlumberModal = () => {
+            if (!plumberModal) {
+                return;
+            }
+            plumberModal.classList.remove('is-open');
+            plumberModal.setAttribute('aria-hidden', 'true');
+        };
+
+        if (plumberForm) {
+            plumberForm.dataset.startTime = Date.now().toString();
+            const activeChip = plumberForm.querySelector('.urgency-chip.active');
+            if (activeChip) {
+                setActive(activeChip);
+            }
+
+            plumberForm.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                const honeypot = plumberForm.querySelector('input[name="company"]');
+                if (honeypot && honeypot.value.trim() !== '') {
+                    return;
+                }
+                const startTime = Number(plumberForm.dataset.startTime || 0);
+                if (startTime && Date.now() - startTime < 2500) {
+                    return;
+                }
+
+                try {
+                    const response = await fetch(plumberForm.action, {
+                        method: 'POST',
+                        body: new FormData(plumberForm),
+                        headers: { 'Accept': 'application/json' }
+                    });
+
+                    if (response.ok) {
+                        plumberForm.reset();
+                        if (activeChip) {
+                            setActive(activeChip);
+                        }
+                        if (plumberModal) {
+                            plumberModal.classList.add('is-open');
+                            plumberModal.setAttribute('aria-hidden', 'false');
+                        }
+                    } else {
+                        alert('Sorry, there was an issue sending your request. Please try again.');
+                    }
+                } catch (error) {
+                    alert('Sorry, there was an issue sending your request. Please try again.');
+                }
+            });
+        }
+
+        if (plumberModal) {
+            plumberModal.addEventListener('click', (event) => {
+                if (event.target === plumberModal || event.target.closest('.form-modal-close')) {
+                    closePlumberModal();
+                }
+            });
+        }
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && plumberModal && plumberModal.classList.contains('is-open')) {
+                closePlumberModal();
+            }
+        });
     </script>
 
 </body>
