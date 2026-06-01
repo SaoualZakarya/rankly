@@ -1,0 +1,2531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ════ ADVANCED ON-PAGE SEO ════ -->
+    <title>Ellison Dental | Private Dentist Harley Street London | Cosmetic & General Dentistry</title>
+    <meta name="description"
+        content="Ellison Dental — award-winning private dental practice on Harley Street, London. Cosmetic dentistry, Invisalign, implants & emergency appointments. Book your free consultation today." />
+    <meta name="keywords"
+        content="private dentist London, Harley Street dentist, cosmetic dentistry London, Invisalign London, dental implants London, emergency dentist London, teeth whitening London" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://ellisondental.co.uk/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ellison Dental | Private Dentist Harley Street London" />
+    <meta property="og:description"
+        content="Award-winning private dental practice. Cosmetic dentistry, implants, Invisalign & emergency care in the heart of London." />
+    <meta property="og:url" content="https://ellisondental.co.uk/" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&q=80" />
+
+    <!-- Local Business Schema -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  "name": "Ellison Dental",
+  "image": "https://ellisondental.co.uk/og.jpg",
+  "url": "https://ellisondental.co.uk",
+  "telephone": "+44-207-946-0123",
+  "priceRange": "£££",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "42 Harley Street",
+    "addressLocality": "London",
+    "postalCode": "W1G 9PR",
+    "addressCountry": "GB"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 51.5194, "longitude": -0.1455 },
+  "openingHours": ["Mo-Fr 08:00-19:00", "Sa 09:00-14:00"],
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "312" },
+  "areaServed": ["Harley Street", "Marylebone", "Mayfair", "Chelsea", "Kensington", "Notting Hill", "Fitzrovia", "Soho", "Belgravia", "Westminster"]
+}
+</script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        :root {
+            --teal: #0a4a4a;
+            --teal-mid: #0d5c5c;
+            --teal-light: #116e6e;
+            --teal-pale: #e8f4f4;
+            --teal-faint: rgba(10, 74, 74, 0.06);
+            --teal-line: rgba(10, 74, 74, 0.15);
+            --gold: #b8975a;
+            --gold-light: #d4b07a;
+            --cream: #faf8f4;
+            --white: #ffffff;
+            --ink: #111518;
+            --ink-mid: #2c3540;
+            --ink-dim: #6b7685;
+            --border: rgba(10, 74, 74, 0.12);
+            --shadow: 0 2px 30px rgba(10, 74, 74, 0.1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: 'DM Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* ─── TOP UTILITY BAR ─── */
+        .topbar {
+            background: var(--teal);
+            padding: 0.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .topbar-left {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .topbar-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .topbar-item a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .topbar-item a:hover {
+            color: #fff;
+        }
+
+        .topbar-right {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .rating-pill {
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 50px;
+            padding: 0.25rem 0.8rem;
+            font-size: 0.72rem;
+            color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .rating-stars {
+            color: #f5c842;
+        }
+
+        /* ─── NAV ─── */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+            box-shadow: 0 1px 20px rgba(10, 74, 74, 0.07);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+        }
+
+        .logo-mark {
+            width: 40px;
+            height: 40px;
+            background: var(--teal);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        .logo-text {
+            line-height: 1.1;
+        }
+
+        .logo-name {
+            font-family: 'Fraunces', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--teal);
+            letter-spacing: 0.5px;
+        }
+
+        .logo-sub {
+            font-size: 0.62rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--ink-dim);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0.3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            color: var(--ink-mid);
+            text-decoration: none;
+            font-size: 0.87rem;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: var(--teal-faint);
+            color: var(--teal);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 0.8rem;
+            align-items: center;
+        }
+
+        .btn-teal {
+            background: var(--teal);
+            color: white;
+            padding: 0.65rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.87rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(10, 74, 74, 0.25);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-teal:hover {
+            background: var(--teal-mid);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 25px rgba(10, 74, 74, 0.35);
+        }
+
+        .btn-outline-teal {
+            background: transparent;
+            color: var(--teal);
+            padding: 0.65rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.87rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1.5px solid var(--teal-line);
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .btn-outline-teal:hover {
+            background: var(--teal-faint);
+            border-color: var(--teal);
+        }
+
+        /* ─── HERO — EDITORIAL SPLIT ─── */
+        .hero {
+            min-height: 92vh;
+            display: grid;
+            grid-template-columns: 55% 45%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-left {
+            background: var(--cream);
+            padding: 7rem 5% 5rem 6%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Large faint serif watermark */
+        .hero-watermark {
+            position: absolute;
+            top: 50%;
+            left: -2rem;
+            transform: translateY(-50%);
+            font-family: 'Fraunces', serif;
+            font-size: 18vw;
+            font-weight: 700;
+            color: rgba(10, 74, 74, 0.04);
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+            white-space: nowrap;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: var(--teal-pale);
+            border-radius: 50px;
+            padding: 0.35rem 1rem;
+            width: fit-content;
+            margin-bottom: 2rem;
+            animation: fadeUp 0.7s ease both;
+        }
+
+        .hero-eyebrow span {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--teal);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .eye-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--teal);
+            border-radius: 50%;
+        }
+
+        .hero h1 {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(2.8rem, 4vw, 4.5rem);
+            font-weight: 300;
+            line-height: 1.1;
+            color: var(--ink);
+            margin-bottom: 1.5rem;
+            animation: fadeUp 0.8s 0.1s ease both;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--teal);
+            font-weight: 400;
+        }
+
+        .hero h1 strong {
+            font-weight: 700;
+        }
+
+        .hero-desc {
+            font-size: 1rem;
+            color: var(--ink-dim);
+            line-height: 1.8;
+            max-width: 460px;
+            font-weight: 300;
+            margin-bottom: 2.5rem;
+            animation: fadeUp 0.9s 0.2s ease both;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 3.5rem;
+            animation: fadeUp 1s 0.3s ease both;
+        }
+
+        /* Lead magnet strip */
+        .lead-magnet-strip {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--gold);
+            border-radius: 10px;
+            padding: 1.2rem 1.5rem;
+            max-width: 460px;
+            animation: fadeUp 1s 0.4s ease both;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .lead-magnet-strip:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 40px rgba(10, 74, 74, 0.15);
+        }
+
+        .lm-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .lm-text p {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .lm-text strong {
+            font-size: 0.95rem;
+            color: var(--ink);
+            font-weight: 600;
+            display: block;
+            margin: 0.1rem 0;
+        }
+
+        .lm-text span {
+            font-size: 0.78rem;
+            color: var(--ink-dim);
+        }
+
+        .lm-cta {
+            margin-left: auto;
+            flex-shrink: 0;
+            background: var(--gold);
+            color: white;
+            padding: 0.55rem 1.1rem;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: background 0.3s;
+        }
+
+        .lm-cta:hover {
+            background: var(--gold-light);
+        }
+
+        /* Hero right — image */
+        .hero-right {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.88) saturate(0.9);
+            transition: transform 8s ease;
+        }
+
+        .hero-right:hover .hero-img {
+            transform: scale(1.03);
+        }
+
+        .hero-img-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(270deg, transparent 60%, var(--cream) 100%);
+        }
+
+        /* Floating stat cards */
+        .hero-stat-card {
+            position: absolute;
+            background: white;
+            border-radius: 12px;
+            padding: 1.1rem 1.4rem;
+            box-shadow: 0 8px 40px rgba(10, 74, 74, 0.18);
+            border: 1px solid var(--border);
+        }
+
+        .hsc-1 {
+            bottom: 3rem;
+            right: 2rem;
+        }
+
+        .hsc-2 {
+            top: 3rem;
+            right: 2rem;
+        }
+
+        .hsc-num {
+            font-family: 'Fraunces', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--teal);
+            line-height: 1;
+        }
+
+        .hsc-label {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--ink-dim);
+            margin-top: 3px;
+        }
+
+        /* Accreditation ribbon */
+        .accred-ribbon {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.93);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid var(--border);
+            padding: 0.8rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 1rem;
+        }
+
+        .accred-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--ink-mid);
+        }
+
+        .accred-item span {
+            font-size: 1rem;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(22px);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* ─── SHARED SECTION STYLES ─── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        .section-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .section-wrap-wide {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 1rem;
+        }
+
+        .tag::before {
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: var(--teal);
+        }
+
+        .sec-title {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            font-weight: 300;
+            line-height: 1.15;
+            color: var(--ink);
+        }
+
+        .sec-title em {
+            font-style: italic;
+            color: var(--teal);
+        }
+
+        .sec-title strong {
+            font-weight: 700;
+        }
+
+        .sec-desc {
+            font-size: 0.97rem;
+            color: var(--ink-dim);
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* ─── TRUST LOGOS ─── */
+        .logos-bar {
+            background: white;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 2rem 5%;
+        }
+
+        .logos-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3.5rem;
+            flex-wrap: wrap;
+        }
+
+        .trust-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            opacity: 0.5;
+            transition: opacity 0.3s;
+        }
+
+        .trust-logo:hover {
+            opacity: 0.85;
+        }
+
+        .trust-logo-icon {
+            font-size: 1.5rem;
+        }
+
+        .trust-logo-name {
+            font-family: 'Fraunces', serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--ink);
+            letter-spacing: 0.5px;
+        }
+
+        /* ─── SERVICES ─── */
+        .services {
+            padding: 8rem 0;
+            background: var(--cream);
+        }
+
+        .services-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: end;
+            margin-bottom: 4rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            border: 1px solid var(--border);
+            transition: all 0.35s;
+            position: relative;
+            overflow: hidden;
+            cursor: default;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--teal), var(--teal-light));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(10, 74, 74, 0.12);
+            border-color: var(--teal-pale);
+        }
+
+        .service-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .service-card.featured {
+            background: var(--teal);
+            color: white;
+            border-color: var(--teal);
+        }
+
+        .service-card.featured .sc-desc {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .service-card.featured .sc-link {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .sc-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            background: var(--teal-faint);
+            border: 1px solid var(--teal-line);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card.featured .sc-icon {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .sc-name {
+            font-family: 'Fraunces', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+        }
+
+        .sc-desc {
+            font-size: 0.87rem;
+            color: var(--ink-dim);
+            line-height: 1.7;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+
+        .sc-link {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--teal);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: gap 0.2s;
+        }
+
+        .sc-link:hover {
+            gap: 0.8rem;
+        }
+
+        /* ─── PROCESS ─── */
+        .process {
+            padding: 8rem 0;
+            background: white;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.6fr;
+            gap: 6rem;
+            align-items: start;
+            margin-top: 4rem;
+        }
+
+        .process-sticky {
+            position: sticky;
+            top: 7rem;
+        }
+
+        .process-img-frame {
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            max-height: 540px;
+            position: relative;
+        }
+
+        .process-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.88);
+        }
+
+        .process-img-label {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 1.5rem;
+            right: 1.5rem;
+            background: rgba(255, 255, 255, 0.93);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 1rem 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            border: 1px solid var(--border);
+        }
+
+        .pil-icon {
+            font-size: 1.4rem;
+        }
+
+        .pil-text strong {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--ink);
+            display: block;
+        }
+
+        .pil-text span {
+            font-size: 0.75rem;
+            color: var(--ink-dim);
+        }
+
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .step {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            padding: 2.5rem 0;
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .step:last-child {
+            border-bottom: none;
+        }
+
+        .step:hover .step-num-wrap {
+            background: var(--teal);
+        }
+
+        .step:hover .step-num-wrap span {
+            color: white;
+        }
+
+        .step-num-wrap {
+            width: 52px;
+            height: 52px;
+            flex-shrink: 0;
+            border: 1.5px solid var(--teal-line);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+            background: var(--teal-faint);
+        }
+
+        .step-num-wrap span {
+            font-family: 'Fraunces', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--teal);
+            transition: color 0.3s;
+        }
+
+        .step-content h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: var(--ink);
+        }
+
+        .step-content p {
+            font-size: 0.88rem;
+            color: var(--ink-dim);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* ─── REVIEWS ─── */
+        .reviews {
+            padding: 8rem 0;
+            background: var(--cream);
+        }
+
+        .reviews-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .rating-summary {
+            background: var(--teal);
+            color: white;
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            min-width: 160px;
+        }
+
+        .rs-score {
+            font-family: 'Fraunces', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .rs-stars {
+            color: #f5c842;
+            font-size: 1rem;
+            letter-spacing: 3px;
+            margin: 0.3rem 0;
+        }
+
+        .rs-count {
+            font-size: 0.72rem;
+            opacity: 0.75;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .review-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .review-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(10, 74, 74, 0.1);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .review-stars {
+            color: #f5a623;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+        }
+
+        .review-source {
+            font-size: 0.7rem;
+            color: var(--ink-dim);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .review-treatment {
+            display: inline-block;
+            background: var(--teal-pale);
+            color: var(--teal);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 0.2rem 0.7rem;
+            border-radius: 50px;
+            margin-bottom: 0.8rem;
+        }
+
+        .review-text {
+            font-size: 0.9rem;
+            color: var(--ink-dim);
+            line-height: 1.75;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .author-av {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--teal-pale);
+            border: 2px solid var(--teal-line);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Fraunces', serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--teal);
+        }
+
+        .author-info strong {
+            font-size: 0.87rem;
+            font-weight: 600;
+            color: var(--ink);
+        }
+
+        .author-info span {
+            font-size: 0.73rem;
+            color: var(--ink-dim);
+        }
+
+        /* ─── LEAD MAGNET SECTION (extra section) ─── */
+        .magnet-section {
+            padding: 6rem 0;
+            background: var(--teal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .magnet-section::before {
+            content: '';
+            position: absolute;
+            top: -5rem;
+            right: -5rem;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+        }
+
+        .magnet-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .magnet-text {
+            color: white;
+        }
+
+        .magnet-text .tag {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .magnet-text .tag::before {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .magnet-title {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+        }
+
+        .magnet-title em {
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .magnet-desc {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.72);
+            line-height: 1.8;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        .magnet-checklist {
+            list-style: none;
+            margin-bottom: 2.5rem;
+        }
+
+        .magnet-checklist li {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.85);
+            padding: 0.4rem 0;
+        }
+
+        .magnet-checklist li::before {
+            content: '✓';
+            color: #a8e6c8;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        /* PDF mockup */
+        .pdf-mockup {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .pdf-top {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pdf-icon-wrap {
+            width: 52px;
+            height: 52px;
+            background: var(--teal);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+        }
+
+        .pdf-title {
+            font-family: 'Fraunces', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--ink);
+        }
+
+        .pdf-subtitle {
+            font-size: 0.75rem;
+            color: var(--ink-dim);
+        }
+
+        .pdf-contents {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .pdf-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: var(--teal-faint);
+            border-radius: 8px;
+            padding: 0.7rem 1rem;
+        }
+
+        .pdf-item-num {
+            width: 24px;
+            height: 24px;
+            background: var(--teal);
+            color: white;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.72rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .pdf-item-text {
+            font-size: 0.83rem;
+            color: var(--ink-mid);
+            font-weight: 500;
+        }
+
+        .pdf-form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .pdf-input {
+            padding: 0.8rem 1rem;
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.87rem;
+            font-family: 'DM Sans', sans-serif;
+            outline: none;
+            color: var(--ink);
+            transition: border-color 0.3s;
+            background: white;
+        }
+
+        .pdf-input:focus {
+            border-color: var(--teal);
+        }
+
+        .pdf-input::placeholder {
+            color: var(--ink-dim);
+        }
+
+        /* ─── FAQ SECTION (extra section) ─── */
+        .faq {
+            padding: 8rem 0;
+            background: white;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: start;
+            margin-top: 4rem;
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .faq-q {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            cursor: pointer;
+            gap: 1rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--ink);
+            transition: color 0.3s;
+        }
+
+        .faq-q:hover {
+            color: var(--teal);
+        }
+
+        .faq-icon {
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
+            border: 1.5px solid var(--teal-line);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: var(--teal);
+            transition: all 0.3s;
+            font-weight: 300;
+        }
+
+        .faq-item.open .faq-icon {
+            background: var(--teal);
+            color: white;
+            transform: rotate(45deg);
+        }
+
+        .faq-a {
+            font-size: 0.88rem;
+            color: var(--ink-dim);
+            line-height: 1.8;
+            font-weight: 300;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s;
+        }
+
+        .faq-item.open .faq-a {
+            max-height: 200px;
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-cta-box {
+            background: var(--teal-faint);
+            border: 1px solid var(--teal-line);
+            border-radius: 20px;
+            padding: 3rem 2.5rem;
+            position: sticky;
+            top: 7rem;
+        }
+
+        .faq-cta-box h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 0.8rem;
+        }
+
+        .faq-cta-box h3 em {
+            font-style: italic;
+            color: var(--teal);
+        }
+
+        .faq-cta-box p {
+            font-size: 0.88rem;
+            color: var(--ink-dim);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .faq-cta-detail {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            font-size: 0.87rem;
+            color: var(--ink-mid);
+        }
+
+        .fcd-icon {
+            font-size: 1.1rem;
+        }
+
+        /* ─── MAP + SERVICE AREA ─── */
+        .area-section {
+            padding: 8rem 0;
+            background: var(--cream);
+        }
+
+        .area-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: start;
+            margin-top: 4rem;
+        }
+
+        .area-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 2rem;
+        }
+
+        .area-pill {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            padding: 0.45rem 1.1rem;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--ink-mid);
+            transition: all 0.3s;
+            cursor: default;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .area-pill:hover,
+        .area-pill.highlight {
+            background: var(--teal);
+            color: white;
+            border-color: var(--teal);
+        }
+
+        .area-pill .dot {
+            width: 6px;
+            height: 6px;
+            background: var(--teal);
+            border-radius: 50%;
+        }
+
+        .area-pill.highlight .dot {
+            background: white;
+        }
+
+        .travel-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            background: white;
+            border-radius: 14px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .ti-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 0.87rem;
+            color: var(--ink-mid);
+        }
+
+        .ti-icon {
+            font-size: 1rem;
+        }
+
+        .ti-item strong {
+            color: var(--teal);
+        }
+
+        /* Map embed container */
+        .map-frame {
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            height: 440px;
+            position: relative;
+        }
+
+        .map-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+            filter: saturate(0.7);
+        }
+
+        /* ─── CONTACT SECTION ─── */
+        .contact-section {
+            padding: 8rem 0;
+            background: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .contact-left h2 {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            font-weight: 300;
+            line-height: 1.15;
+            margin-bottom: 1.2rem;
+        }
+
+        .contact-left h2 em {
+            font-style: italic;
+            color: var(--teal);
+        }
+
+        .contact-left p {
+            font-size: 0.95rem;
+            color: var(--ink-dim);
+            line-height: 1.8;
+            font-weight: 300;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            padding: 1.1rem 1.4rem;
+            border-radius: 12px;
+            background: var(--teal-faint);
+            border: 1px solid var(--teal-line);
+            text-decoration: none;
+            color: var(--ink);
+            transition: all 0.3s;
+        }
+
+        .contact-detail:hover {
+            background: var(--teal-pale);
+            transform: translateX(4px);
+        }
+
+        .cd-icon-wrap {
+            width: 38px;
+            height: 38px;
+            background: var(--teal);
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .cd-label {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--teal);
+            font-weight: 700;
+        }
+
+        .cd-value {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--ink);
+        }
+
+        /* Booking form */
+        .booking-form {
+            background: var(--cream);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .bf-header {
+            margin-bottom: 2rem;
+        }
+
+        .bf-title {
+            font-family: 'Fraunces', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: 0.3rem;
+        }
+
+        .bf-sub {
+            font-size: 0.82rem;
+            color: var(--ink-dim);
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 0.4rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1.5px solid var(--border);
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-family: 'DM Sans', sans-serif;
+            color: var(--ink);
+            background: white;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--teal);
+        }
+
+        .form-group select option {
+            background: white;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .treatment-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .t-pill {
+            background: white;
+            border: 1.5px solid var(--border);
+            border-radius: 50px;
+            padding: 0.4rem 1rem;
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: var(--ink-mid);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .t-pill:hover,
+        .t-pill.selected {
+            background: var(--teal-pale);
+            border-color: var(--teal);
+            color: var(--teal);
+        }
+
+        .privacy-note {
+            font-size: 0.72rem;
+            color: var(--ink-dim);
+            margin-top: 0.8rem;
+            line-height: 1.5;
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            background: var(--ink);
+            color: white;
+        }
+
+        .footer-main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 5% 4rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-brand .logo-name {
+            color: white;
+            font-size: 1.3rem;
+        }
+
+        .footer-brand .logo-sub {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .footer-brand p {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1.7;
+            margin-top: 1rem;
+            font-weight: 300;
+            max-width: 280px;
+        }
+
+        .footer-col h4 {
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .footer-col a {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-bottom p {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.35);
+        }
+
+        .footer-bottom a {
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+            font-size: 0.75rem;
+            transition: color 0.2s;
+        }
+
+        .footer-bottom a:hover {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Rankly badge */
+        .rankly-badge {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 998;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            padding: 0.5rem 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            backdrop-filter: blur(10px);
+            text-decoration: none;
+            transition: box-shadow 0.3s;
+            box-shadow: 0 4px 20px rgba(10, 74, 74, 0.12);
+        }
+
+        .rankly-badge:hover {
+            box-shadow: 0 6px 30px rgba(10, 74, 74, 0.22);
+        }
+
+        .rankly-badge span {
+            font-size: 0.68rem;
+            color: var(--ink-dim);
+            letter-spacing: 1px;
+        }
+
+        .rankly-badge strong {
+            font-size: 0.72rem;
+            color: var(--teal);
+            letter-spacing: 1px;
+            font-family: 'Fraunces', serif;
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+
+            .hero-right {
+                height: 400px;
+            }
+
+            .hero-img-overlay {
+                background: linear-gradient(180deg, var(--cream) 0%, transparent 40%);
+            }
+
+            .hero-left {
+                padding-bottom: 0;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .process-grid,
+            .faq-grid,
+            .area-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-sticky {
+                position: static;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .reviews-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .magnet-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .services-header {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+        <div class="topbar-left">
+            <div class="topbar-item">📍 <span>42 Harley Street, London W1G 9PR</span></div>
+            <div class="topbar-item">📞 <a href="tel:+442079460123">+44 207 946 0123</a></div>
+            <div class="topbar-item">🕐 <span>Mon–Fri 8am–7pm &nbsp;·&nbsp; Sat 9am–2pm</span></div>
+        </div>
+        <div class="topbar-right">
+            <div class="rating-pill"><span class="rating-stars">★★★★★</span> 4.9 &nbsp;·&nbsp; 312 Google reviews</div>
+        </div>
+    </div>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-logo">
+            <div class="logo-mark">🦷</div>
+            <div class="logo-text">
+                <div class="logo-name">Ellison Dental</div>
+                <div class="logo-sub">Private Practice · Harley Street</div>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#services">Treatments</a></li>
+            <li><a href="#process">How It Works</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#area">Find Us</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="#magnet" class="btn-outline-teal">📥 Free Guide</a>
+            <a href="#contact" class="btn-teal">Book Free Consult →</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-left">
+            <div class="hero-watermark">SMILE</div>
+            <div class="hero-eyebrow">
+                <div class="eye-dot"></div>
+                <span>Harley Street's Leading Private Dentist</span>
+            </div>
+
+            <h1>
+                The smile you've<br />
+                always <em>imagined</em><br />
+                is <strong>within reach.</strong>
+            </h1>
+
+            <p class="hero-desc">
+                At Ellison Dental, we combine cutting-edge technology with a calm, unhurried approach. Whether you need
+                a routine check-up or a complete smile transformation — you're in expert hands.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#contact" class="btn-teal">Book Free Consultation →</a>
+                <a href="tel:+442079460123" class="btn-outline-teal">📞 Call Us</a>
+            </div>
+
+            <a href="#magnet" class="lead-magnet-strip">
+                <div class="lm-icon">📋</div>
+                <div class="lm-text">
+                    <p>Free Download</p>
+                    <strong>The London Patient's Guide to Private Dentistry</strong>
+                    <span>What to ask, what to expect, how to choose — 12-page PDF</span>
+                </div>
+                <div class="lm-cta">Get It Free</div>
+            </a>
+        </div>
+
+        <div class="hero-right">
+            <img class="hero-img"
+                src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=900&q=85&fit=crop&crop=faces"
+                alt="Ellison Dental clinic Harley Street London" loading="eager" />
+            <div class="hero-img-overlay"></div>
+            <div class="hero-stat-card hsc-2">
+                <div class="hsc-num">20+</div>
+                <div class="hsc-label">Years of Excellence</div>
+            </div>
+            <div class="hero-stat-card hsc-1">
+                <div class="hsc-num">3,200+</div>
+                <div class="hsc-label">Happy Patients</div>
+            </div>
+            <div class="accred-ribbon">
+                <div class="accred-item"><span>🏅</span> GDC Registered</div>
+                <div class="accred-item"><span>🇬🇧</span> BDA Member</div>
+                <div class="accred-item"><span>⭐</span> Invisalign Platinum</div>
+                <div class="accred-item"><span>🔬</span> ITI Fellow</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST LOGOS -->
+    <div class="logos-bar reveal">
+        <div class="logos-inner">
+            <div class="trust-logo">
+                <div class="trust-logo-icon">🦷</div>
+                <div class="trust-logo-name">Invisalign Platinum</div>
+            </div>
+            <div class="trust-logo">
+                <div class="trust-logo-icon">🏛️</div>
+                <div class="trust-logo-name">GDC Registered</div>
+            </div>
+            <div class="trust-logo">
+                <div class="trust-logo-icon">🌟</div>
+                <div class="trust-logo-name">Top Doctor 2024</div>
+            </div>
+            <div class="trust-logo">
+                <div class="trust-logo-icon">🔬</div>
+                <div class="trust-logo-name">Digital Dentistry</div>
+            </div>
+            <div class="trust-logo">
+                <div class="trust-logo-icon">📰</div>
+                <div class="trust-logo-name">As Seen In Vogue</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="section-wrap">
+            <div class="services-header reveal">
+                <div>
+                    <div class="tag">Our Treatments</div>
+                    <div class="sec-title">Everything your<br /><em>smile needs,</em> under one roof.</div>
+                </div>
+                <div class="sec-desc" style="max-width:380px">From a simple clean to a full smile makeover — our
+                    specialist team covers every aspect of your dental health and aesthetics.</div>
+            </div>
+            <div class="services-grid reveal">
+                <div class="service-card">
+                    <div class="sc-icon">😁</div>
+                    <div class="sc-name">Teeth Whitening</div>
+                    <div class="sc-desc">Professional in-chair whitening that achieves up to 8 shades brighter in a
+                        single session. Take-home kits also available.</div>
+                    <a href="#contact" class="sc-link">Book Consultation →</a>
+                </div>
+                <div class="service-card featured">
+                    <div class="sc-icon">🦷</div>
+                    <div class="sc-name">Invisalign</div>
+                    <div class="sc-desc">Discreet clear aligners to straighten your teeth without anyone knowing.
+                        Platinum-certified provider with 500+ cases completed.</div>
+                    <a href="#contact" class="sc-link">Book Consultation →</a>
+                </div>
+                <div class="service-card">
+                    <div class="sc-icon">💎</div>
+                    <div class="sc-name">Dental Veneers</div>
+                    <div class="sc-desc">Ultra-thin porcelain veneers designed by our master ceramist. Natural-looking,
+                        long-lasting, life-changing results.</div>
+                    <a href="#contact" class="sc-link">Book Consultation →</a>
+                </div>
+                <div class="service-card">
+                    <div class="sc-icon">🔩</div>
+                    <div class="sc-name">Dental Implants</div>
+                    <div class="sc-desc">Replace missing teeth permanently with titanium implants that look, feel and
+                        function just like natural teeth.</div>
+                    <a href="#contact" class="sc-link">Book Consultation →</a>
+                </div>
+                <div class="service-card">
+                    <div class="sc-icon">🩺</div>
+                    <div class="sc-name">General Dentistry</div>
+                    <div class="sc-desc">Thorough check-ups, hygiene appointments, white fillings and root canal
+                        treatment — all in a relaxed, unhurried environment.</div>
+                    <a href="#contact" class="sc-link">Book Consultation →</a>
+                </div>
+                <div class="service-card">
+                    <div class="sc-icon">🚨</div>
+                    <div class="sc-name">Emergency Care</div>
+                    <div class="sc-desc">Toothache, broken teeth, lost fillings — we offer same-day emergency
+                        appointments for urgent dental problems.</div>
+                    <a href="#contact" class="sc-link">Book Today →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process" id="process">
+        <div class="section-wrap">
+            <div class="reveal" style="max-width:560px">
+                <div class="tag">How It Works</div>
+                <div class="sec-title">From first call to<br /><em>perfect smile</em> — four steps.</div>
+            </div>
+            <div class="process-grid">
+                <div class="process-sticky reveal">
+                    <div class="process-img-frame">
+                        <img class="process-img"
+                            src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=700&q=80&fit=crop"
+                            alt="Ellison Dental consultation room" />
+                        <div class="process-img-label">
+                            <div class="pil-icon">🏥</div>
+                            <div class="pil-text">
+                                <strong>State-of-the-art clinic</strong>
+                                <span>Harley Street, London W1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="steps reveal">
+                    <div class="step">
+                        <div class="step-num-wrap"><span>1</span></div>
+                        <div class="step-content">
+                            <h3>Free Consultation</h3>
+                            <p>A no-obligation 30-minute appointment to discuss your goals, examine your teeth, and
+                                answer every question you have — completely free of charge.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num-wrap"><span>2</span></div>
+                        <div class="step-content">
+                            <h3>Bespoke Treatment Plan</h3>
+                            <p>We design a personalised plan tailored to your smile goals and budget. You receive a full
+                                written breakdown — no surprises, no hidden costs.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num-wrap"><span>3</span></div>
+                        <div class="step-content">
+                            <h3>Gentle, Precise Treatment</h3>
+                            <p>Our specialists carry out treatment at your pace, using the latest digital technology and
+                                premium materials. Most patients are surprised by how comfortable it is.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num-wrap"><span>4</span></div>
+                        <div class="step-content">
+                            <h3>Aftercare & Maintenance</h3>
+                            <p>We don't disappear after treatment. Regular follow-ups, a dedicated care coordinator, and
+                                a 5-year guarantee on all restorative work.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews" id="reviews">
+        <div class="section-wrap">
+            <div class="reviews-header reveal">
+                <div>
+                    <div class="tag">Patient Reviews</div>
+                    <div class="sec-title">Trusted by<br /><em>thousands</em> of Londoners.</div>
+                </div>
+                <div class="rating-summary">
+                    <div class="rs-score">4.9</div>
+                    <div class="rs-stars">★★★★★</div>
+                    <div class="rs-count">312 Google Reviews</div>
+                </div>
+            </div>
+            <div class="reviews-grid reveal">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-stars">★★★★★</div>
+                        <div class="review-source">Google</div>
+                    </div>
+                    <div class="review-treatment">Invisalign</div>
+                    <p class="review-text">"I was terrified of dentists for 20 years. The team at Ellison made every
+                        visit genuinely enjoyable. My Invisalign results are beyond what I hoped for — I smile in every
+                        photo now."</p>
+                    <div class="review-author">
+                        <div class="author-av">C</div>
+                        <div class="author-info">
+                            <strong>Claire W.</strong>
+                            <span>Marylebone, London</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-stars">★★★★★</div>
+                        <div class="review-source">Google</div>
+                    </div>
+                    <div class="review-treatment">Veneers</div>
+                    <p class="review-text">"Had 8 veneers done here and the result is absolutely stunning. The ceramist
+                        is an artist. People genuinely think these are my natural teeth. Worth every penny on Harley
+                        Street."</p>
+                    <div class="review-author">
+                        <div class="author-av">J</div>
+                        <div class="author-info">
+                            <strong>James H.</strong>
+                            <span>Chelsea, London</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-stars">★★★★★</div>
+                        <div class="review-source">Trustpilot</div>
+                    </div>
+                    <div class="review-treatment">Implants</div>
+                    <p class="review-text">"Two implants after years of avoiding dentists. Dr Ellison was patient,
+                        explained everything, and the procedure was nothing like I feared. Already recommended three
+                        friends here."</p>
+                    <div class="review-author">
+                        <div class="author-av">A</div>
+                        <div class="author-info">
+                            <strong>Amara O.</strong>
+                            <span>Kensington, London</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEAD MAGNET SECTION -->
+    <section class="magnet-section" id="magnet">
+        <div class="magnet-inner">
+            <div class="magnet-text reveal">
+                <div class="tag">Free Download</div>
+                <div class="magnet-title">
+                    "The London Patient's Guide<br />to <em>Private Dentistry"</em>
+                </div>
+                <p class="magnet-desc">Not sure what to expect from private dental care? Download our free 12-page guide
+                    — written by our clinical director for patients who want to make informed decisions.</p>
+                <ul class="magnet-checklist">
+                    <li>How to compare private dental practices in London</li>
+                    <li>What questions to ask before any treatment</li>
+                    <li>Understanding treatment costs & financing options</li>
+                    <li>Cosmetic vs. functional dentistry — what you actually need</li>
+                    <li>Red flags to watch out for when choosing a dentist</li>
+                </ul>
+                <div class="sec-desc" style="color:rgba(255,255,255,0.55);font-size:0.82rem">📩 Sent instantly to your
+                    inbox · No spam, unsubscribe anytime</div>
+            </div>
+            <div class="pdf-mockup reveal">
+                <div class="pdf-top">
+                    <div class="pdf-icon-wrap">📄</div>
+                    <div>
+                        <div class="pdf-title">London Patient's Guide to Private Dentistry</div>
+                        <div class="pdf-subtitle">By Dr. Richard Ellison BDS MSc · 12 pages · Free</div>
+                    </div>
+                </div>
+                <div class="pdf-contents">
+                    <div class="pdf-item">
+                        <div class="pdf-item-num">1</div>
+                        <div class="pdf-item-text">Choosing the right dentist for you</div>
+                    </div>
+                    <div class="pdf-item">
+                        <div class="pdf-item-num">2</div>
+                        <div class="pdf-item-text">Understanding your treatment options</div>
+                    </div>
+                    <div class="pdf-item">
+                        <div class="pdf-item-num">3</div>
+                        <div class="pdf-item-text">Costs, finance & what's worth it</div>
+                    </div>
+                    <div class="pdf-item">
+                        <div class="pdf-item-num">4</div>
+                        <div class="pdf-item-text">Questions to ask your dentist</div>
+                    </div>
+                </div>
+                <div class="pdf-form">
+                    <input class="pdf-input" type="text" placeholder="Your first name" />
+                    <input class="pdf-input" type="email" placeholder="Your email address" />
+                    <button class="btn-teal" style="width:100%;justify-content:center;padding:0.9rem;font-size:0.9rem">
+                        📥 Send Me the Free Guide
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="section-wrap">
+            <div class="reveal" style="max-width:500px;margin-bottom:4rem">
+                <div class="tag">Common Questions</div>
+                <div class="sec-title">Everything you<br />want to <em>know.</em></div>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-list reveal">
+                    <div class="faq-item open">
+                        <div class="faq-q" onclick="toggleFaq(this)">
+                            Is the first consultation really free?
+                            <div class="faq-icon">+</div>
+                        </div>
+                        <div class="faq-a">Yes, completely. Your first 30-minute consultation with one of our clinicians
+                            is entirely free of charge and carries no obligation to proceed with treatment. We want you
+                            to feel informed and comfortable before making any decision.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q" onclick="toggleFaq(this)">
+                            How much does Invisalign cost in London?
+                            <div class="faq-icon">+</div>
+                        </div>
+                        <div class="faq-a">Invisalign costs vary depending on the complexity of your case. At Ellison
+                            Dental, treatment typically ranges from £2,800 to £5,500. We offer 0% finance options to
+                            spread the cost with no interest. Exact pricing is provided in your written treatment plan
+                            after consultation.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q" onclick="toggleFaq(this)">
+                            Do you see nervous or anxious patients?
+                            <div class="faq-icon">+</div>
+                        </div>
+                        <div class="faq-a">Absolutely. Dental anxiety is extremely common and our team is specially
+                            trained to help nervous patients feel at ease. We take everything at your pace, offer
+                            conscious sedation if needed, and have helped hundreds of anxious patients regain confidence
+                            in the dental chair.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q" onclick="toggleFaq(this)">
+                            How quickly can I get an appointment?
+                            <div class="faq-icon">+</div>
+                        </div>
+                        <div class="faq-a">New patient consultations are typically available within 2–5 working days.
+                            Emergency appointments are available same-day or next-day. Simply call us or use the booking
+                            form below — our reception team will find a time that suits you.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q" onclick="toggleFaq(this)">
+                            Is private dentistry worth it vs NHS?
+                            <div class="faq-icon">+</div>
+                        </div>
+                        <div class="faq-a">Private dentistry offers longer appointment times, a wider choice of
+                            treatments and materials, access to specialist expertise, and a more personalised
+                            experience. Our free guide covers this topic in detail — download it above for an honest
+                            comparison.</div>
+                    </div>
+                </div>
+                <div class="faq-cta-box reveal">
+                    <h3>Still have a<br /><em>question?</em></h3>
+                    <p>Our patient coordinators are available Monday to Friday 8am–7pm and Saturday 9am–2pm. Call,
+                        email, or WhatsApp — we reply promptly.</p>
+                    <div class="faq-cta-detail"><span class="fcd-icon">📞</span><a href="tel:+442079460123"
+                            style="color:var(--teal);text-decoration:none;font-weight:600">+44 207 946 0123</a></div>
+                    <div class="faq-cta-detail"><span class="fcd-icon">✉️</span><a
+                            href="mailto:hello@ellisondental.co.uk"
+                            style="color:var(--teal);text-decoration:none;font-weight:600">hello@ellisondental.co.uk</a>
+                    </div>
+                    <div class="faq-cta-detail"><span class="fcd-icon">💬</span><a href="https://wa.me/442079460123"
+                            style="color:var(--teal);text-decoration:none;font-weight:600">WhatsApp Us</a></div>
+                    <a href="#contact" class="btn-teal"
+                        style="margin-top:1.5rem;display:inline-flex;width:100%;justify-content:center">Book Free
+                        Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAP + SERVICE AREA -->
+    <section class="area-section" id="area">
+        <div class="section-wrap">
+            <div class="reveal" style="margin-bottom:0">
+                <div class="tag">Location & Coverage</div>
+                <div class="sec-title">Conveniently located<br />in the <em>heart of London.</em></div>
+            </div>
+            <div class="area-grid">
+                <div class="reveal">
+                    <p class="sec-desc" style="margin-bottom:2rem">Our Harley Street clinic is minutes from Oxford
+                        Circus, Bond Street and Regent's Park. We serve patients from across London and welcome
+                        international visitors.</p>
+
+                    <h4
+                        style="font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--ink-dim);margin-bottom:1rem;font-weight:700">
+                        Areas We Serve</h4>
+                    <div class="area-pills">
+                        <div class="area-pill highlight">
+                            <div class="dot"></div>Harley Street
+                        </div>
+                        <div class="area-pill highlight">
+                            <div class="dot"></div>Marylebone
+                        </div>
+                        <div class="area-pill">
+                            <div class="dot"></div>Mayfair
+                        </div>
+                        <div class="area-pill">
+                            <div class="dot"></div>Fitzrovia
+                        </div>
+                        <div class="area-pill">
+                            <div class="dot"></div>Chelsea
+                        </div>
+                        <div class="area-pill">
+                            <div class="dot"></div>Kensington
+                        </div>
+                        <div class="area-pill">
+                            <div class="dot"></div>Notting Hill
+                        </div>
+                        <div class="area-pill">
+                            <div class="dot"></div>Belgravia
+                        </div>
+                        <div class="area-pill">
+                            <div class="dot"></div>Westminster
+                        </div>
+                        <div class="area-pill">
+                            <div class="dot"></div>Soho
+                        </div>
+                        <div class="area-pill">
+                            <div class="dot"></div>Covent Garden
+                        </div>
+                        <div class="area-pill">
+                            <div class="dot"></div>All of Central London
+                        </div>
+                    </div>
+
+                    <div class="travel-info" style="margin-top:2rem">
+                        <div class="ti-item"><span class="ti-icon">🚇</span>2 min walk from <strong>Regent's
+                                Park</strong> tube</div>
+                        <div class="ti-item"><span class="ti-icon">🚇</span>5 min from <strong>Oxford Circus</strong>
+                            (Bakerloo & Victoria)</div>
+                        <div class="ti-item"><span class="ti-icon">🚇</span>7 min from <strong>Bond Street</strong>
+                            (Central & Jubilee)</div>
+                        <div class="ti-item"><span class="ti-icon">🅿️</span>Pay & display parking on <strong>Harley
+                                Street</strong></div>
+                        <div class="ti-item"><span class="ti-icon">♿</span>Fully <strong>wheelchair accessible</strong>
+                            clinic</div>
+                    </div>
+                </div>
+
+                <div class="map-frame reveal">
+                    <!-- Google Maps embed — Harley Street London -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.2!2d-0.1469!3d51.5194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761ad534b97a2b%3A0x5d6e5a5b5a5b5a5b!2sHarley+St%2C+London!5e0!3m2!1sen!2sgb!4v1234567890"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        title="Ellison Dental — 42 Harley Street London">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+        <div class="section-wrap">
+            <div class="contact-grid">
+                <div class="contact-left reveal">
+                    <div class="tag">Book Your Visit</div>
+                    <h2>Start with a<br /><em>free consultation.</em></h2>
+                    <p>No pressure, no obligation. Just a calm conversation about your smile and what's possible. We'll
+                        give you honest advice, a clear treatment plan, and transparent pricing.</p>
+
+                    <div class="contact-details">
+                        <a href="tel:+442079460123" class="contact-detail">
+                            <div class="cd-icon-wrap">📞</div>
+                            <div>
+                                <div class="cd-label">Call Direct</div>
+                                <div class="cd-value">+44 207 946 0123</div>
+                            </div>
+                        </a>
+                        <a href="mailto:hello@ellisondental.co.uk" class="contact-detail">
+                            <div class="cd-icon-wrap">✉️</div>
+                            <div>
+                                <div class="cd-label">Email Us</div>
+                                <div class="cd-value">hello@ellisondental.co.uk</div>
+                            </div>
+                        </a>
+                        <a href="https://wa.me/442079460123" class="contact-detail">
+                            <div class="cd-icon-wrap">💬</div>
+                            <div>
+                                <div class="cd-label">WhatsApp</div>
+                                <div class="cd-value">Message Us Now</div>
+                            </div>
+                        </a>
+                        <a href="#area" class="contact-detail">
+                            <div class="cd-icon-wrap">📍</div>
+                            <div>
+                                <div class="cd-label">Visit Us</div>
+                                <div class="cd-value">42 Harley Street, London W1G 9PR</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="booking-form reveal">
+                    <div class="bf-header">
+                        <div class="bf-title">Request Your Free Consultation</div>
+                        <div class="bf-sub">We confirm within 2 hours during business hours</div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" placeholder="Sarah" />
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" placeholder="Johnson" />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="tel" placeholder="+44 7700 000 000" />
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" placeholder="sarah@email.com" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>I'm Interested In</label>
+                        <div class="treatment-pills">
+                            <div class="t-pill selected" onclick="this.classList.toggle('selected')">Invisalign</div>
+                            <div class="t-pill" onclick="this.classList.toggle('selected')">Whitening</div>
+                            <div class="t-pill" onclick="this.classList.toggle('selected')">Veneers</div>
+                            <div class="t-pill" onclick="this.classList.toggle('selected')">Implants</div>
+                            <div class="t-pill" onclick="this.classList.toggle('selected')">General Check-up</div>
+                            <div class="t-pill" onclick="this.classList.toggle('selected')">Emergency</div>
+                            <div class="t-pill" onclick="this.classList.toggle('selected')">Not Sure Yet</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Preferred Appointment Time</label>
+                        <select>
+                            <option>Mornings (8am–12pm)</option>
+                            <option>Afternoons (12pm–5pm)</option>
+                            <option>Evenings (5pm–7pm)</option>
+                            <option>Saturday Morning</option>
+                            <option>Any time is fine</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Anything you'd like us to know? (optional)</label>
+                        <textarea
+                            placeholder="e.g. I'm a nervous patient, I have a specific concern, I'm interested in a smile makeover..."></textarea>
+                    </div>
+                    <button class="btn-teal"
+                        style="width:100%;justify-content:center;padding:1rem;font-size:0.97rem;border-radius:12px">
+                        Book Free Consultation →
+                    </button>
+                    <p class="privacy-note">🔒 Your information is completely confidential and will never be shared. By
+                        submitting you agree to our privacy policy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-main">
+            <div class="footer-brand">
+                <div class="nav-logo" style="margin-bottom:1rem">
+                    <div class="logo-mark">🦷</div>
+                    <div class="logo-text">
+                        <div class="logo-name" style="color:white">Ellison Dental</div>
+                        <div class="logo-sub">Private Practice · Harley Street</div>
+                    </div>
+                </div>
+                <p>Award-winning private dental practice at 42 Harley Street, London. Serving patients across Central
+                    London since 2004. GDC Registered. BDA Member.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Treatments</h4>
+                <ul>
+                    <li><a href="#">Invisalign</a></li>
+                    <li><a href="#">Dental Veneers</a></li>
+                    <li><a href="#">Teeth Whitening</a></li>
+                    <li><a href="#">Dental Implants</a></li>
+                    <li><a href="#">Emergency Care</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Practice</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Patient Reviews</a></li>
+                    <li><a href="#">Finance Options</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:+442079460123">+44 207 946 0123</a></li>
+                    <li><a href="mailto:hello@ellisondental.co.uk">hello@ellisondental.co.uk</a></li>
+                    <li><a href="#">42 Harley Street, W1G 9PR</a></li>
+                    <li><a href="#">Mon–Fri: 8am–7pm</a></li>
+                    <li><a href="#">Saturday: 9am–2pm</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Ellison Dental Ltd. All rights reserved. GDC Registered. Complaints procedure available on
+                request.</p>
+            <div style="display:flex;gap:1.5rem">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Cookie Policy</a>
+                <a href="#">Terms</a>
+                <a href="#">Accessibility</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- RANKLY BADGE -->
+    <a href="#" class="rankly-badge">
+        <span>Built by</span>
+        <strong>RANKLY</strong>
+    </a>
+
+    <script>
+        // Scroll reveal
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach((e, i) => {
+                if (e.isIntersecting) {
+                    setTimeout(() => e.target.classList.add('visible'), i * 80);
+                }
+            });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
+
+        // FAQ accordion
+        function toggleFaq(el) {
+            const item = el.closest('.faq-item');
+            const isOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+            if (!isOpen) item.classList.add('open');
+        }
+    </script>
+
+</body>
+
+</html>
